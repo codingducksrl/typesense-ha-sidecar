@@ -175,8 +175,10 @@ All configuration is done through environment variables:
 The DNS hostname to resolve. This should be a DNS name that resolves to all Typesense nodes in your cluster.
 
 - **Required:** Yes
-- **Default:** `example.com` (in Dockerfile, but should be overridden)
+- **Default:** `example.com` (placeholder in Dockerfile - **must be overridden** for the sidecar to function properly)
 - **Example:** `typesense.default.svc.cluster.local`
+
+⚠️ **Important:** The default value `example.com` is not functional and must be replaced with your actual service DNS name.
 
 In Kubernetes, this is typically a headless service name. In Docker Swarm, this would be a service name.
 
