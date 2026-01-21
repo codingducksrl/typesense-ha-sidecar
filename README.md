@@ -175,7 +175,7 @@ All configuration is done through environment variables:
 The DNS hostname to resolve. This should be a DNS name that resolves to all Typesense nodes in your cluster.
 
 - **Required:** Yes
-- **Default:** `example.com` (placeholder in Dockerfile - **must be overridden** for the sidecar to function properly)
+- **Default:** `example.com` (non-functional placeholder - **must be overridden**)
 - **Example:** `typesense.default.svc.cluster.local`
 
 ⚠️ **Important:** The default value `example.com` is not functional and must be replaced with your actual service DNS name.
@@ -197,7 +197,7 @@ Lower values provide faster updates when nodes are added/removed, but increase D
 The path where the node list file will be written. This should be on a shared volume that Typesense can read.
 
 - **Required:** No
-- **Default:** `/data/ips.txt` (Dockerfile ENV overrides the script's default of `/data/typesense-nodes`)
+- **Default:** `/data/ips.txt` (set in Dockerfile; script fallback would be `/data/typesense-nodes` if no ENV was set)
 - **Example:** `/data/typesense-nodes`, `/shared/nodes.txt`
 
 The file contains a comma-separated list in Typesense's node format: `ip1:peering_port:api_port,ip2:peering_port:api_port`
