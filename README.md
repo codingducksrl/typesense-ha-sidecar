@@ -197,7 +197,7 @@ Lower values provide faster updates when nodes are added/removed, but increase D
 The path where the node list file will be written. This should be on a shared volume that Typesense can read.
 
 - **Required:** No
-- **Default:** `/data/ips.txt` (as set in Dockerfile)
+- **Default:** `/data/ips.txt` (Dockerfile ENV overrides the script's default of `/data/typesense-nodes`)
 - **Example:** `/data/typesense-nodes`, `/shared/nodes.txt`
 
 The file contains a comma-separated list in Typesense's node format: `ip1:peering_port:api_port,ip2:peering_port:api_port`
